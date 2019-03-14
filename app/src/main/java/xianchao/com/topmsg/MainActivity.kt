@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import kotlinx.android.synthetic.main.activity_main.*
 import android.view.View
 import xianchao.com.topmsg.other.extFullStatusBar
@@ -39,6 +40,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.button_pop -> {
                 TopWindowMsg.show(this)
+                Handler().postDelayed({
+                    TopWindowMsg.dismiss()
+                },2000)
             }
         }
     }
